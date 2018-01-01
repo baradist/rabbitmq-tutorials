@@ -1,22 +1,25 @@
 subprojects {
     apply plugin: 'java'
-    apply plugin: 'application'
 
     tasks.withType(JavaCompile) {
         sourceCompatibility = JavaVersion.VERSION_1_8
         targetCompatibility = JavaVersion.VERSION_1_8
     }
 
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        compile project (':common')
-
-        compile 'com.rabbitmq:amqp-client:4.0.2'
-        compile 'org.slf4j:slf4j-api:1.7.25'
-    }
-
     version = "1.0-SNAPSHOT"
+
+    if (it.name != 'common') {
+        apply plugin: 'application'
+
+        repositories {
+            mavenCentral()
+        }
+
+        dependencies {
+            compile project(':common')
+
+            compile 'com.rabbitmq:amqp-client:4.0.2'
+            compile 'org.slf4j:slf4j-api:1.7.25'
+        }
+    }
 }

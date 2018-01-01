@@ -17,3 +17,7 @@ task shadowRecv (group: 'shadow') {
 }
 
 mainClassName = 'Send'
+
+shadowJar {
+    exclude 'app.properties'
+}
