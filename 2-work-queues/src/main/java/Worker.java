@@ -30,8 +30,7 @@ public class Worker {
                 }
             }
         };
-        boolean autoAck = true; // acknowledgment is covered below
-        channel.basicConsume(TASK_QUEUE_NAME, autoAck, consumer);
+        channel.basicConsume(TASK_QUEUE_NAME, false, consumer);
     }
 
     private static void doWork(String task) {
