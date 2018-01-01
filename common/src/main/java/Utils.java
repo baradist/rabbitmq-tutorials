@@ -13,6 +13,5 @@ public class Utils {
         } catch (IOException e) {
             return "localhost";
         }
-//        return PropertyResourceBundle.getBundle("app").getString("rabbitmq.host");
     }
 }
