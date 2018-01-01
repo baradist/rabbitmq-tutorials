@@ -4,6 +4,16 @@ plugins {
 
 shadowJar {
     exclude 'app.properties'
+    archiveName = "${baseName}-${version}-${classifier}-${mainClassName}.${extension}"
+}
+
+task shadowRecv (group: 'shadow') {
+    doFirst {
+        mainClassName = 'Recv'
+    }
+    doLast {
+        shadowJar.execute()
+    }
 }
 
 mainClassName = 'Send'
