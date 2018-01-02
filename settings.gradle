@@ -1,5 +1,6 @@
 rootProject.name = 'rabbitmq-tutorials'
 
 include 'common'
-include '1-hello-world'
+include '1-hello-world-send'
+include '1-hello-world-recv'
 include '2-work-queues'
